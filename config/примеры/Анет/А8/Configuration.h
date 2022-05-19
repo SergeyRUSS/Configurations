@@ -72,18 +72,18 @@
 //===========================================================================
 //============================= HANGPRINTER =================================
 //===========================================================================
-// For a Hangprinter start with the configuration file in the
-// example_configurations/hangprinter directory and customize for your machine.
+// Для начала чашона с файлом конфигурации в
+// example_configurations/hangprinter Directory и настройте для вашей машины.
 //
 
 // @section info
 
-// User-specified version info of this build to display in [Pronterface, etc] terminal window during
-// startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
-// build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(Bob Kuhn, Anet config)" // Who made the changes.
-#define SHOW_BOOTSCREEN
-#define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
+// Указанная пользователем Версия Информация об этой сборке для отображения в окне терминала [PRENTERFACE и т. Д.]
+// запускать. Реализация идеи профессора Брейно сообщить пользователю, что любые изменения в этом
+// Построение пользователем успешно загружено в прошивку.
+//#define STRING_CONFIG_H_AUTHOR "(Bob Kuhn, Anet config)" // Who made the changes.
+//#define SHOW_BOOTSCREEN
+#define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // будет показан во время загрузки в строке 1
 #define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
 
 /**
@@ -106,9 +106,9 @@
 // @section machine
 
 /**
- * Select the serial port on the board to use for communication with the host.
- * This allows the connection of wireless adapters (for instance) to non-default port pins.
- * Serial port 0 is always used by the Arduino bootloader regardless of this setting.
+ * Выберите последовательный порт на плате, чтобы использовать для общения с хостом.
+ * Это позволяет подключению беспроводных адаптеров (например,) к контактам не деко-по умолчанию.
+ * Серийный порт 0 всегда используется загрузчиком Arduino, независимо от этой настройки.
  *
  * :[0, 1, 2, 3, 4, 5, 6, 7]
  */
@@ -134,8 +134,8 @@
   #define MOTHERBOARD BOARD_ANET_10
 #endif
 
-// Optional custom name for your RepStrap or other custom machine
-// Displayed in the LCD "Ready" message
+// Необязательное пользовательское имя для вашего Repstrap или другой пользовательской машины
+// отображается в сообщении LCD «Готов»
 //#define CUSTOM_MACHINE_NAME "3D Printer"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
@@ -193,8 +193,8 @@
 #endif
 
 /**
- * Two separate X-carriages with extruders that connect to a moving part
- * via a magnetic docking mechanism. Requires SOL1_PIN and SOL2_PIN.
+ * Два отдельных X-Carriage с экструдерами, которые подключаются к движущейся части
+ * С помощью магнитного стыковочного механизма. Требуется sol1_pin и sol2_pin.
  */
 //#define PARKING_EXTRUDER
 #if ENABLED(PARKING_EXTRUDER)
@@ -359,7 +359,7 @@
 #define BED_MAXTEMP      130
 
 //===========================================================================
-//============================= PID Settings ================================
+//============================= Настройки PID ================================
 //===========================================================================
 // PID Tuning Guide here: http://reprap.org/wiki/PID_Tuning
 
@@ -408,29 +408,29 @@
 //===========================================================================
 
 /**
- * PID Bed Heating
+ * Нагрев пид -кровати
  *
- * If this option is enabled set PID constants below.
- * If this option is disabled, bang-bang will be used and BED_LIMIT_SWITCHING will enable hysteresis.
+ * Если этот параметр включен, установите константы PID ниже.
+ * Если эта опция отключена, будет использоваться Bang-Bang, и Bed_Limit_switching позволит обеспечить гистерезис.
  *
- * The PID frequency will be the same as the extruder PWM.
- * If PID_dT is the default, and correct for the hardware/configuration, that means 7.689Hz,
- * which is fine for driving a square wave into a resistive load and does not significantly
- * impact FET heating. This also works fine on a Fotek SSR-10DA Solid State Relay into a 250W
- * heater. If your configuration is significantly different than this and you don't understand
- * the issues involved, don't use bed PID until someone else verifies that your hardware works.
+ * Частота PID будет такой же, как и писторовщик экструдера.
+ * Если PID_DT является по умолчанию и является правильным для оборудования/конфигурации, это означает 7,689 Гц,
+ * Что хорошо для вождения квадратной волны в резистирующую нагрузку и существенно не
+ * Влияет на отопление FET. Это также прекрасно работает на реле SSR-10DA SSR-10DA в 250 Вт.
+ * обогреватель. Если ваша конфигурация значительно отличается от этого, и вы не понимаете
+ * Вовлеченные проблемы, не используйте Pid PID, пока кто -то другой не проверит, что ваше оборудование работает.
  */
-#define PIDTEMPBED
+//#define PIDTEMPBED
 
-//#define BED_LIMIT_SWITCHING
+#define BED_LIMIT_SWITCHING
 
 /**
- * Max Bed Power
- * Applies to all forms of bed control (PID, bang-bang, and bang-bang with hysteresis).
- * When set to any value below 255, enables a form of PWM to the bed that acts like a divider
- * so don't use it unless you are OK with PWM on your bed. (See the comment on enabling PIDTEMPBED)
+ *Максимальная мощность кровати
+ * Применяется ко всем формам управления лодом (PID, Bang-Bang и Bang-Bang с гистерезисом).
+ * Когда установлено любое значение ниже 255, позволяет форме ШИМ в кровать, которая действует как разделитель
+ * Так что не используйте его, если вы не в порядке с PWM на своей кровати. (См. Комментарий о включении Pidtempbed)
  */
-#define MAX_BED_POWER 255 // limits duty cycle to bed; 255=full current
+#define MAX_BED_POWER 255 // ограничивает рабочее цикл в постель; 255 = Полный ток
 
 #if ENABLED(PIDTEMPBED)
 
@@ -454,7 +454,7 @@
   #define DEFAULT_bedKi 35.65
   #define DEFAULT_bedKd 610.21
 
-  // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
+  // Найдите свой собственный: «M303 E-1 C8 S90», чтобы запустить автонастройку на кровати при 90 градусах в течение 8 циклов.
 #endif // PIDTEMPBED
 
 // @section extruder
@@ -464,40 +464,39 @@
  * Add M302 to set the minimum extrusion temperature and/or turn
  * cold extrusion prevention on and off.
  *
- * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
+ * *** Настоятельно рекомендуется оставить эту опцию включенной! ***
  */
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 160  // 160 guards against false tripping when the extruder fan kicks on.
-
+#define EXTRUDE_MINTEMP 160  // 160 охранников против ложных отключений, когда начинается фанат экструдера.
 /**
- * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
- * Note: For Bowden Extruders make this large enough to allow load/unload.
+ * Предотвратить одну экструзию дольше, чем Extrude_maxlength.
+ * Примечание: для экструдеров Боудена делают это достаточно большим, чтобы разрешить нагрузку/разгрузку.
  */
 #define PREVENT_LENGTHY_EXTRUDE
 #define EXTRUDE_MAXLENGTH 200
 
 //===========================================================================
-//======================== Thermal Runaway Protection =======================
+//======================== Тепловая защита от бега =======================
 //===========================================================================
 
 /**
- * Thermal Protection provides additional protection to your printer from damage
- * and fire. Marlin always includes safe min and max temperature ranges which
- * protect against a broken or disconnected thermistor wire.
+ * Тепловая защита обеспечивает дополнительную защиту вашего принтера от повреждений
+ * и огонь. Марлин всегда включает в себя безопасные минимальные и максимальные диапазоны температуры, которые
+ * Защитите от сломанного или отключенного термисторного провода.
  *
- * The issue: If a thermistor falls out, it will report the much lower
- * temperature of the air in the room, and the the firmware will keep
- * the heater on.
+ * Проблема: если термистор выпадет, он сообщит о гораздо ниже
+ * Температура воздуха в комнате, и прошивка будет держать
+ * Нагреватель на.
  *
- * If you get "Thermal Runaway" or "Heating failed" errors the
- * details can be tuned in Configuration_adv.h
+ * Если вы получите «термический сбег» или «Ошибка нагрева»
+ * Подробности можно настроить в configuration_adv.h
  */
 
 #define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
 #define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
 
 //===========================================================================
-//============================= Mechanical Settings =========================
+//============================= Механические настройки =========================
 //===========================================================================
 
 // @section machine
@@ -512,14 +511,14 @@
 //#define COREZY
 
 //===========================================================================
-//============================== Endstop Settings ===========================
+//============================== Настройки конечных пунктов ===========================
 //===========================================================================
 
 // @section homing
 
-// Specify here all the endstop connectors that are connected to any endstop or probe.
-// Almost all printers will be using one per axis. Probes will use one or more of the
-// extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
+// Укажите здесь все разъемы Endstop, которые подключены к любому Endstop или зонд.
+// почти все принтеры будут использовать по одной на ось. Зонды будут использовать один или несколько
+// дополнительные разъемы. Оставьте неопределенные любые используемые в целях, не связанных.
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
@@ -527,7 +526,7 @@
 //#define USE_YMAX_PLUG
 //#define USE_ZMAX_PLUG
 
-// Enable pullup for all endstops to prevent a floating state
+// Включить подтягивание для всех конечных стопов, чтобы предотвратить плавающее состояние
 #define ENDSTOPPULLUPS
 #if DISABLED(ENDSTOPPULLUPS)
   // Disable ENDSTOPPULLUPS to set pullups individually
@@ -540,7 +539,7 @@
   //#define ENDSTOPPULLUP_ZMIN_PROBE
 #endif
 
-// Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
+// Механический конечный стой с COM на землю и NC для сигнала использует здесь «FALSE» (наиболее распространенная настройка).
 #define X_MIN_ENDSTOP_INVERTING true  // set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING true  // set to true to invert the logic of the endstop.
 #define Z_MIN_ENDSTOP_INVERTING true  // set to true to invert the logic of the endstop.
@@ -575,8 +574,8 @@
 //#define E3_DRIVER_TYPE A4988
 //#define E4_DRIVER_TYPE A4988
 
-// Enable this feature if all enabled endstop pins are interrupt-capable.
-// This will remove the need to poll the interrupt pins, saving many CPU cycles.
+// Включите эту функцию, если все включенные контакты Endstop способны прерывать.
+// Это удалит необходимость опросить выводы прерывания, сохраняя многие циклы процессора.
 #define ENDSTOP_INTERRUPTS_FEATURE
 
 /**
@@ -597,7 +596,7 @@
 //#define ENDSTOP_NOISE_FILTER
 
 //=============================================================================
-//============================== Movement Settings ============================
+//============================== Настройки движения ============================
 //=============================================================================
 // @section motion
 
@@ -674,7 +673,7 @@
 //#define S_CURVE_ACCELERATION
 
 //===========================================================================
-//============================= Z Probe Options =============================
+//============================= ZПараметры зонда =============================
 //===========================================================================
 // @section probes
 
@@ -726,40 +725,40 @@
 //#define MANUAL_PROBE_START_Z 0.2
 
 /**
- * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
- *   (e.g., an inductive probe or a nozzle-based probe-switch.)
+ * Установленное исправление зонд либо не развертывает, либо требует ручного развертывания.
+ * (например, индуктивный зонд или переключатель зонда на основе сопла.)
  */
 //#define FIX_MOUNTED_PROBE
 
 /**
- * Z Servo Probe, such as an endstop switch on a rotating arm.
+ * Z Серворекшированный зонд, такой как переключатель Endstop на вращающейся руке.
  */
 //#define Z_PROBE_SERVO_NR 0   // Defaults to SERVO 0 connector.
 //#define Z_SERVO_ANGLES {70,0}  // Z Servo Deploy and Stow angles
 
 /**
- * The BLTouch probe uses a Hall effect sensor and emulates a servo.
+ * Зонд BLTouch использует датчик эффекта зала и эмулирует сервопривод.
  */
-//#define BLTOUCH
-
+#define BLTOUCH
+#define SERVO0_PIN 27 // для дисплея ANET A8
 /**
- * Enable one or more of the following if probing seems unreliable.
- * Heaters and/or fans can be disabled during probing to minimize electrical
- * noise. A delay can also be added to allow noise and vibration to settle.
- * These options are most useful for the BLTouch probe, but may also improve
- * readings with inductive probes and piezo sensors.
+ *Включить одно или несколько из следующих, если зондирование кажется ненадежным.
+ * Нагреватели и/или вентиляторы могут быть отключены во время исследования, чтобы минимизировать электричество
+ * шум. Можно также добавить задержку, чтобы позволить шуму и вибрации оседание.
+ * Эти варианты наиболее полезны для зонда BLTouch, но также могут улучшить
+ * показания с индуктивными зондами и пьезой датчиками.
  */
-//#define PROBING_HEATERS_OFF       // Turn heaters off when probing
+//#define PROBING_HEATERS_OFF       // Выключить обогреватели при исследовании
 #if ENABLED(PROBING_HEATERS_OFF)
-  //#define WAIT_FOR_BED_HEATER     // Wait for bed to heat back up between probes (to improve accuracy)
+  //#define WAIT_FOR_BED_HEATER     // Подождите, пока кровать нагревается между зондами (для повышения точности)
 #endif
-//#define PROBING_FANS_OFF          // Turn fans off when probing
-//#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
+//#define PROBING_FANS_OFF          // Выключите поклонники при расследовании
+//#define DELAY_BEFORE_PROBING 200  // (ms) Чтобы предотвратить вибрации, вызвав пьезорезоры
 
-// A probe that is deployed and stowed with a solenoid pin (SOL1_PIN)
+// Зонд, который развернут и утирен с соленоидным штифтом (sol1_pin)
 //#define SOLENOID_PROBE
 
-// A sled-mounted probe like those designed by Charles Bell.
+// Сани из сани, подобного тем, которые спроектированы Чарльзом Беллом.
 //#define Z_PROBE_SLED
 //#define SLED_DOCKING_OFFSET 5  // The extra distance the X axis must travel to pickup the sled. 0 should be fine but you can push it further if you'd like.
 
@@ -786,85 +785,85 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER 0   // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER 0   // Y offset: -front +behind [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER -26   // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -40   // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
 
-// Certain types of probes need to stay away from edges
+// Определенные типы зондов должны держаться подальше от краев
 #define MIN_PROBE_EDGE 10
 
-// X and Y axis travel speed (mm/m) between probes
+// Скорость перемещения оси x и y (мм/м) между зондами
 #define XY_PROBE_SPEED 6000
 
-// Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
+//Переговка (мм/м) для первого подхода при двойном применении (Multiple_probing == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
-// Feedrate (mm/m) for the "accurate" probe of each point
+// Подача (мм/м) для «точного» зонда каждой точки
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
 
-// The number of probes to perform at each point.
-//   Set to 2 for a fast/slow probe, using the second probe result.
-//   Set to 3 or more for slow probes, averaging the results.
+// Количество зондов для выполнения в каждой точке.
+// Установить 2 для быстрого/медленного зонда, используя второй результат зонда.
+// Установить 3 или более для медленных зондов, усредняя результаты.
 //#define MULTIPLE_PROBING 2
 
 /**
- * Z probes require clearance when deploying, stowing, and moving between
- * probe points to avoid hitting the bed and other hardware.
- * Servo-mounted probes require extra space for the arm to rotate.
- * Inductive probes need space to keep from triggering early.
+ * Z -датчики требуют очистки при развертывании, ухудшении и перемещении между
+ * Зонд точек, чтобы избежать удара по кровати и другому оборудованию.
+ * Установленные сервоприводы требуют дополнительного места для повернутой руки.
+ * Индуктивные зонды нуждаются в пространстве, чтобы не запустить рано.
  *
- * Use these settings to specify the distance (mm) to raise the probe (or
- * lower the bed). The values set here apply over and above any (negative)
- * probe Z Offset set with Z_PROBE_OFFSET_FROM_EXTRUDER, M851, or the LCD.
- * Only integer values >= 1 are valid here.
+ * Используйте эти настройки, чтобы указать расстояние (MM), чтобы поднять зонд (или
+ * Опустите кровать). Значения, установленные здесь, применяются сверх любых (отрицательных)
+ * Зонд z Смещение настройки с Z_PROBE_OFFSET_FROM_EXTRUDER, M851 или LCD.
+ * Только целочисленные значения> = 1 действительны здесь.
  *
- * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
- *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
+ * Пример: `M851 Z-5` с зазором 4 => 9 мм от кровати до насадки.
+ * Но: `m851 z+1` с зазором 2 => 2 мм от кровати до насадки.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
-//#define Z_AFTER_PROBING           5 // Z position after probing is done
+#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z очистка для развертывания/Стоу
+#define Z_CLEARANCE_BETWEEN_PROBES  5 // Z очистка между точками зонда
+#define Z_CLEARANCE_MULTI_PROBE     5 //Z очистка между несколькими зондами
+//#define Z_AFTER_PROBING           5 // Z позиция после проведения исследования
 
-#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -2 // Наиболее дальнее расстояние ниже триггерной точки, прежде чем остановиться
 
-// For M851 give a range for adjusting the Z probe offset
+//For M851, give a range to configure the shift of the probe z
 #define Z_PROBE_OFFSET_RANGE_MIN -20
 #define Z_PROBE_OFFSET_RANGE_MAX 20
 
-// Enable the M48 repeatability test to test probe accuracy
+// Включить тест на повторяемость M48 для проверки точности зонда
 //#define Z_MIN_PROBE_REPEATABILITY_TEST
 
-// For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
+// Для инвертирующего ступени выводы (Active Low Low) используйте 0, не инвертинг (Active High) Использование 1
 // :{ 0:'Low', 1:'High' }
 #define X_ENABLE_ON 0
 #define Y_ENABLE_ON 0
 #define Z_ENABLE_ON 0
 #define E_ENABLE_ON 0 // For all extruders
 
-// Disables axis stepper immediately when it's not being used.
-// WARNING: When motors turn off there is a chance of losing position accuracy!
+// Отключает шаг оси немедленно, когда он не используется.
+// Предупреждение: когда двигатели выключаются, есть шанс потерять точность позиции!
 #define DISABLE_X false
 #define DISABLE_Y false
 #define DISABLE_Z false
-// Warn on display about possibly reduced accuracy
+// Предупреждение о возможном сниженной точности
 //#define DISABLE_REDUCED_ACCURACY_WARNING
 
 // @section extruder
 
-#define DISABLE_E false // For all extruders
-#define DISABLE_INACTIVE_EXTRUDER true // Keep only the active extruder enabled.
+#define DISABLE_E false // Для всех экструдеров
+#define DISABLE_INACTIVE_EXTRUDER true //Держите только активный экструдер включен.
 
 // @section machine
 
-// Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
+// Переверните шаговое направление. Измените (или отмените разъем двигателя), если ось идет неправильно.
 #define INVERT_X_DIR false
 #define INVERT_Y_DIR false
 #define INVERT_Z_DIR true
 
 // @section extruder
 
-// For direct drive extruder v9 set to true, for geared extruder set to false.
+// Для прямых экструдеров привод V9 установлен на True, для заправленного экструдера, установленного на FALSE.
 #define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
@@ -880,7 +879,7 @@
 //#define Z_HOMING_HEIGHT 4  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
                              // Be sure you have this distance over your Z_MAX_POS in case.
 
-// Direction of endstops when homing; 1=MAX, -1=MIN
+//Направление конечных стопов при самопроизводстве; 1 = макс, -1 = мин
 // :[-1,1]
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
@@ -888,11 +887,11 @@
 
 // @section machine
 
-// The size of the print bed
+// Размер печатной кровати
 #define X_BED_SIZE 220
 #define Y_BED_SIZE 220
 
-// Travel limits (mm) after homing, corresponding to endstop positions.
+// Пределы перемещения (мм) после дома, соответствующие позициям в конечном счете.
 #define X_MIN_POS -33
 #define Y_MIN_POS -10
 #define Z_MIN_POS 0
@@ -901,15 +900,15 @@
 #define Z_MAX_POS 240
 
 /**
- * Software Endstops
+ * Программное обеспечение конечных стопов
  *
- * - Prevent moves outside the set machine bounds.
- * - Individual axes can be disabled, if desired.
- * - X and Y only apply to Cartesian robots.
- * - Use 'M211' to set software endstops on/off or report current state
+ * - Предотвращение движения за пределами установленных границ машин.
+ * - Отдельные оси могут быть отключены, при желании.
+ * - x и y применяются только к роботам декарторов.
+ * - Используйте 'M211', чтобы установить Endstops Software Endstops или отчет о текущем состоянии
  */
 
-// Min software endstops constrain movement within minimum coordinate bounds
+// MIN программного обеспечения Endstops ограничивает движение в пределах минимальных координат
 #define MIN_SOFTWARE_ENDSTOPS
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS)
   #define MIN_SOFTWARE_ENDSTOP_X
@@ -917,7 +916,7 @@
   #define MIN_SOFTWARE_ENDSTOP_Z
 #endif
 
-// Max software endstops constrain movement within maximum coordinate bounds
+// Max Software Endstops ограничивает движение в пределах максимальных границ координат
 #define MAX_SOFTWARE_ENDSTOPS
 #if ENABLED(MAX_SOFTWARE_ENDSTOPS)
   #define MAX_SOFTWARE_ENDSTOP_X
@@ -925,17 +924,17 @@
   #define MAX_SOFTWARE_ENDSTOP_Z
 #endif
 
-#if ENABLED(MIN_SOFTWARE_ENDSTOPS) || ENABLED(MAX_SOFTWARE_ENDSTOPS)
-  //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
+#if ENABLED(MIN_SOFTWARE_ENDSTOPS) || Включено (max_software_endstops)
+  //#define SOFT_ENDSTOPS_MENU_ITEM  //Включить/отключить эндстопы программного обеспечения из ЖК -дисплея
 #endif
 
 /**
- * Filament Runout Sensors
- * Mechanical or opto endstops are used to check for the presence of filament.
+ * Датчики выпуска нити
+ * Механические или Opto Endstops используются для проверки наличия нити.
  *
- * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
- * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
- * By default the firmware assumes HIGH=FILAMENT PRESENT.
+ * Платы на основе рампов используют Servo3_pin для первого датчика разгона.
+ * Для других плат вам может потребоваться определить FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN и т. Д.
+ * По умолчанию прошивка предполагает высокую = нить присутствует.
  */
 //#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
@@ -951,71 +950,71 @@
 // @section calibrate
 
 /**
- * Choose one of the options below to enable G29 Bed Leveling. The parameters
- * and behavior of G29 will change depending on your selection.
+ * Выберите один из приведенных ниже вариантов, чтобы включить выравнивание кроватей G29. Параметры
+ * И поведение G29 изменится в зависимости от вашего выбора.
  *
- *  If using a Probe for Z Homing, enable Z_SAFE_HOMING also!
+ * При использовании зонда для z -самонинга также включите Z_SAFE_HOMMING!
  *
- * - AUTO_BED_LEVELING_3POINT
- *   Probe 3 arbitrary points on the bed (that aren't collinear)
- *   You specify the XY coordinates of all 3 points.
- *   The result is a single tilted plane. Best for a flat bed.
+ * - auto_bed_leveling_3point
+ * Зонд 3 произвольные точки на кровати (которые не коллинеарные)
+ * Вы указываете координаты XY всех 3 баллов.
+ * Результат - одна наклонная плоскость. Лучше всего для плоской кровати.
  *
- * - AUTO_BED_LEVELING_LINEAR
- *   Probe several points in a grid.
- *   You specify the rectangle and the density of sample points.
- *   The result is a single tilted plane. Best for a flat bed.
+ * - auto_bed_leveling_lineear
+ * Поседайте несколько очков в сетке.
+ * Вы указываете прямоугольник и плотность точек образца.
+ * Результат - одна наклонная плоскость. Лучше всего для плоской кровати.
  *
- * - AUTO_BED_LEVELING_BILINEAR
- *   Probe several points in a grid.
- *   You specify the rectangle and the density of sample points.
- *   The result is a mesh, best for large or uneven beds.
+ * - auto_bed_leveling_bilinear
+ * Поседайте несколько очков в сетке.
+ * Вы указываете прямоугольник и плотность точек образца.
+ * Результатом является сетка, лучше всего для больших или неровных кроватей.
  *
- * - AUTO_BED_LEVELING_UBL (Unified Bed Leveling)
- *   A comprehensive bed leveling system combining the features and benefits
- *   of other systems. UBL also includes integrated Mesh Generation, Mesh
- *   Validation and Mesh Editing systems.
+ * - auto_bed_leveling_ubl (Unified Bedering)
+ * Комплексная система выравнивания кроватей, объединяющая функции и преимущества
+ * других систем. UBL также включает в себя интегрированную сетку, сетку
+ * Системы проверки и редактирования сетки.
  *
- * - MESH_BED_LEVELING
- *   Probe a grid manually
- *   The result is a mesh, suitable for large or uneven beds. (See BILINEAR.)
- *   For machines without a probe, Mesh Bed Leveling provides a method to perform
- *   leveling in steps so you can manually adjust the Z height at each grid-point.
- *   With an LCD controller the process is guided step-by-step.
+ * - Mesh_bed_leveling
+ * Поиск сетки вручную
+ * Результатом является сетка, подходящая для больших или неровных кроватей. (См. Билинеар.)
+ * Для машин без зонда, выравнивание сетки обеспечивает метод для выполнения
+ * Выравнивание по ступенькам, чтобы вы могли вручную отрегулировать высоту Z в каждой сетке.
+ * С контроллером ЖК-дисплея процесс руководствуется пошаговым.
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
 /**
- * Normally G28 leaves leveling disabled on completion. Enable
- * this option to have G28 restore the prior leveling state.
+ *Обычно G28 оставляет выравнивание отключено по завершению. Давать возможность
+ * Этот вариант, чтобы G28 восстановил предыдущее состояние выравнивания.
  */
 //#define RESTORE_LEVELING_AFTER_G28
 
 /**
- * Enable detailed logging of G28, G29, M48, etc.
- * Turn on with the command 'M111 S32'.
- * NOTE: Requires a lot of PROGMEM!
+ * Включить подробную регистрацию G28, G29, M48 и т. Д.
+ * Включите команду 'M111 S32'.
+ * ПРИМЕЧАНИЕ: Требуется много Progmem!
  */
 //#define DEBUG_LEVELING_FEATURE
 
 #if ENABLED(MESH_BED_LEVELING) || ENABLED(AUTO_BED_LEVELING_BILINEAR) || ENABLED(AUTO_BED_LEVELING_UBL)
-  // Gradually reduce leveling correction until a set height is reached,
-  // at which point movement will be level to the machine's XY plane.
-  // The height can be set with M420 Z<height>
+  // Постепенно уменьшить поправку на выравнивание до достижения установленной высоты,
+  // в этот момент движение будет равна плоскости XY машины.
+  // Высота может быть установлена ​​с M420 z <Высота>
   #define ENABLE_LEVELING_FADE_HEIGHT
 
-  // For Cartesian machines, instead of dividing moves on mesh boundaries,
-  // split up moves into short segments like a Delta. This follows the
-  // contours of the bed more closely than edge-to-edge straight moves.
+  // Для картезианских машин вместо разделения движений на границы сетки,
+  // Разделитель движется на короткие сегменты, как дельта. Это следует за
+  // контуры кровати более близко, чем прямые движения от края.
   #define SEGMENT_LEVELED_MOVES
   #define LEVELED_SEGMENT_LENGTH 5.0 // (mm) Length of all segments (except the last one)
 
   /**
-   * Enable the G26 Mesh Validation Pattern tool.
+   * Включите инструмент G26 сетки.
    */
   //#define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
@@ -1029,32 +1028,32 @@
 
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
-  // Set the number of grid points per dimension.
+  // Установите количество точек сетки на размер.
   #define GRID_MAX_POINTS_X 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
-  // Set the boundaries for probing (where the probe can reach).
+  //Установите границы для зондирования (где зонд может достигать).
   //#define LEFT_PROBE_BED_POSITION MIN_PROBE_EDGE
   //#define RIGHT_PROBE_BED_POSITION (X_BED_SIZE - MIN_PROBE_EDGE)
   //#define FRONT_PROBE_BED_POSITION MIN_PROBE_EDGE
   //#define BACK_PROBE_BED_POSITION (Y_BED_SIZE - MIN_PROBE_EDGE)
 
-  // Probe along the Y axis, advancing X after each column
+  // Зонд вдоль оси Y, продвигая x после каждого столбца
   //#define PROBE_Y_FIRST
 
   #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
-    // Beyond the probed grid, continue the implied tilt?
-    // Default is to maintain the height of the nearest edge.
+    // За исследуемой сеткой продолжите подразумеваемый наклон?
+    // по умолчанию поддерживать высоту ближайшего края.
     //#define EXTRAPOLATE_BEYOND_GRID
 
     //
-    // Experimental Subdivision of the grid by Catmull-Rom method.
-    // Synthesizes intermediate points to produce a more detailed mesh.
+    // Экспериментальное подразделение сетки методом Catmull-Rom.
+    // синтезирует промежуточные точки для получения более подробной сетки.
     //
     //#define ABL_BILINEAR_SUBDIVISION
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
-      // Number of subdivisions between probe points
+      // Количество подразделений между точками зонда
       #define BILINEAR_SUBDIVISIONS 3
     #endif
 
@@ -1063,25 +1062,25 @@
 #elif ENABLED(AUTO_BED_LEVELING_UBL)
 
   //===========================================================================
-  //========================= Unified Bed Leveling ============================
+  //========================= Объединенное выравнивание кровати ============================
   //===========================================================================
 
-  //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
+  //#define MESH_EDIT_GFX_OVERLAY   // Отображать наложение графики при редактировании сетки
 
-  #define MESH_INSET 1              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
+  #define MESH_INSET 1              // Установить границы сетки в качестве вставной области кровати
+  #define GRID_MAX_POINTS_X 10      // Не используйте более 15 баллов на ось, реализация Limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
-  #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
-  #define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
+  #define UBL_MESH_EDIT_MOVES_Z     // Сложные пользователи не предпочитают никакого движения сопла
+  #define UBL_SAVE_ACTIVE_ON_M500   // Сохраните в настоящее время активную сетку в текущем слоте на M500
 
-  //#define UBL_Z_RAISE_WHEN_OFF_MESH 2.5 // When the nozzle is off the mesh, this value is used
-                                          // as the Z-Height correction value.
+  //#define UBL_Z_RAISE_WHEN_OFF_MESH 2.5 // Когда сопло выключен сетка, это значение используется
+                                          // как значение коррекции z-высота.
 
 #elif ENABLED(MESH_BED_LEVELING)
 
   //===========================================================================
-  //=================================== Mesh ==================================
+  //=================================== Сетка ==================================
   //===========================================================================
 
   #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
@@ -1106,84 +1105,84 @@
 #endif
 
 /**
- * Add a bed leveling sub-menu for ABL or MBL.
- * Include a guided procedure if manual probing is enabled.
+ * Добавьте подменю, выравнивающую кровать, для ABL или MBL.
+ * Включите управляемую процедуру, если включено ручное исследование.
  */
 //#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
-  #define MBL_Z_STEP 0.025    // Step size while manually probing Z axis.
+  #define MBL_Z_STEP 0.025    // Размер шага при вручную исследуя z оси.
   #define LCD_PROBE_Z_RANGE 4 // Z Range centered on Z_MIN_POS for LCD Z adjustment
 #endif
 
-// Add a menu item to move between bed corners for manual bed adjustment
+//Добавьте пункт меню, чтобы перемещаться между углом кровати для ручной настройки кровати
 //#define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
-  #define LEVEL_CORNERS_INSET 30    // (mm) An inset for corner leveling
-  #define LEVEL_CORNERS_Z_HOP  4.0  // (mm) Move nozzle up before moving between corners
-  //#define LEVEL_CENTER_TOO        // Move to the center after the last corner
+  #define LEVEL_CORNERS_INSET 30    // (мм) вставка для углового выравнивания
+  #define LEVEL_CORNERS_Z_HOP  4.0  // (MM) Передоте перед перемещением между углом
+  //#define LEVEL_CENTER_TOO        // Переехать в центр после последнего угла
 #endif
 
 /**
- * Commands to execute at the end of G29 probing.
- * Useful to retract or move the Z probe out of the way.
+ * Команды для выполнения в конце зондирования G29.
+ * Полезно для устранения или убрания зонда Z.
  */
 //#define Z_PROBE_END_SCRIPT "G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10"
 
 
 // @section homing
 
-// The center of the bed is at (X=0, Y=0)
+// Центр кровати в (x = 0, y = 0)
 //#define BED_CENTER_AT_0_0
 
-// Manually set the home position. Leave these undefined for automatic settings.
-// For DELTA this is the top-center of the Cartesian print volume.
+// Вручную установите домашнюю позицию. Оставьте их неопределенными для автоматических настроек.
+// для Delta Это верхний центр тома картезианской печати.
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 0
 
-// Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
+// Используйте «z безопасное домашнее домашнее хозяйство», чтобы избежать дома с зондом Z за пределами площади.
 //
-// With this feature enabled:
+// с включенной функцией:
 //
-// - Allow Z homing only after X and Y homing AND stepper drivers still enabled.
-// - If stepper drivers time out, it will need X and Y homing again before Z homing.
-// - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
-// - Prevent Z homing when the Z probe is outside bed area.
+// - Разрешить Z -самоуправление только после того, как x и y -unging и шаговые водители все еще включены.
+// - Если шаговые драйверы Time Out, он снова понадобится x и y, прежде чем Z -самоуправление.
+// - переместите зонд Z (или сопла) в определенную точку xy перед Z -самоунигнутом при дому все оси (G28).
+// - предотвратить Z -самоуправление, когда Z -зонд находится за пределами площади.
 //
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
-  #define Z_SAFE_HOMING_Y_POINT ((Y_BED_SIZE) / 2)    // Y point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // X точка для z -самонажига.
+  #define Z_SAFE_HOMING_Y_POINT ((Y_BED_SIZE) / 2)    // Y точка для Z Самонажинг при самопроизводстве всех оси (G28).
 #endif
 
-// Homing speeds (mm/m)
+// Скорость самонаживания (мм/м)
 #define HOMING_FEEDRATE_XY (100*60)
 #define HOMING_FEEDRATE_Z  (4*60)
 
 // @section calibrate
 
 /**
- * Bed Skew Compensation
+ * Кровать перекосит компенсацию
  *
- * This feature corrects for misalignment in the XYZ axes.
+ * Эта функция исправляет смещение на осях XYZ.
  *
- * Take the following steps to get the bed skew in the XY plane:
- *  1. Print a test square (e.g., https://www.thingiverse.com/thing:2563185)
- *  2. For XY_DIAG_AC measure the diagonal A to C
- *  3. For XY_DIAG_BD measure the diagonal B to D
- *  4. For XY_SIDE_AD measure the edge A to D
+ * Сделайте следующие шаги, чтобы набрать кровать в самолете XY:
+ * 1. Распечатайте испытательный квадрат (например, https://www.thingiverse.com/thing:2563185)
+ * 2. Для XY_DIAG_AC измерить диагональ A до c
+ * 3. Для xy_diag_bd измерить диагональ от B до d
+ * 4. для xy_side_ad измерения края A до d
  *
- * Marlin automatically computes skew factors from these measurements.
- * Skew factors may also be computed and set manually:
+ * Marlin автоматически вычисляет коэффициенты перекоса из этих измерений.
+ * Факторы перекоса также могут быть рассчитаны и установлены вручную:
  *
- *  - Compute AB     : SQRT(2*AC*AC+2*BD*BD-4*AD*AD)/2
- *  - XY_SKEW_FACTOR : TAN(PI/2-ACOS((AC*AC-AB*AB-AD*AD)/(2*AB*AD)))
+ * - Вычислить AB: SQRT (2*AC*AC+2*BD*BD -4*AD*AD)/2
+ *-xy_skew_factor: tan (pi/2-acos ((ac*ac-ab*ab-ad*ad)/(2*ab*ad))))))
  *
- * If desired, follow the same procedure for XZ and YZ.
- * Use these diagrams for reference:
+ * При желании следуйте той же процедуре для XZ и YZ.
+ * Используйте эти диаграммы для справки:
  *
  *    Y                     Z                     Z
  *    ^     B-------C       ^     B-------C       ^     B-------C
@@ -1221,7 +1220,7 @@
 #endif
 
 //=============================================================================
-//============================= Additional Features ===========================
+//============================= Дополнительные функции ===========================
 //=============================================================================
 
 // @section extras
@@ -1234,9 +1233,9 @@
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //
-#define EEPROM_SETTINGS   // Enable for M500 and M501 commands
-//#define DISABLE_M503    // Saves ~2700 bytes of PROGMEM. Disable for release!
-#define EEPROM_CHITCHAT   // Give feedback on EEPROM commands. Disable to save PROGMEM.
+#define EEPROM_SETTINGS   // Включить команды M500 и M501
+//#define DISABLE_M503    // Сохраняет ~ 2700 байтов Progmem. Отключить для выпуска!
+//#define EEPROM_CHITCHAT   // Дайте обратную связь по командам EEPROM. Отключить, чтобы сохранить Progmem.
 
 //
 // Host Keepalive
@@ -1244,12 +1243,12 @@
 // When enabled Marlin will send a busy status message to the host
 // every couple of seconds when it can't accept commands.
 //
-//#define HOST_KEEPALIVE_FEATURE       // Disable this if your host doesn't like keepalive messages
-//#define DEFAULT_KEEPALIVE_INTERVAL 2 // Number of seconds between "busy" messages. Set with M113.
-#define BUSY_WHILE_HEATING            // Some hosts require "busy" messages even during heating
+//#define HOST_KEEPALIVE_FEATURE       // Отключите это, если ваш хост не любит Hepalive сообщения
+//#define DEFAULT_KEEPALIVE_INTERVAL 2 // Количество секунд между «занятыми» сообщениями. Установить с M113.
+#define BUSY_WHILE_HEATING            // Некоторым хостам требуются «занятые» сообщения даже во время отопления
 
 //
-// M100 Free Memory Watcher
+// M100 Бесплатный наблюдатель памяти
 //
 //#define M100_FREE_MEMORY_WATCHER    // Add M100 (Free Memory Watcher) to debug memory usage
 
@@ -1530,8 +1529,8 @@
 //#define LCD_FEEDBACK_FREQUENCY_HZ 5000
 
 //=============================================================================
-//======================== LCD / Controller Selection =========================
-//========================   (Character-based LCDs)   =========================
+//======================== Выбор LCD / контроллера =======================================================================
+// ======================= (LCD на основе символов)  =========================
 //=============================================================================
 
 //
@@ -1592,8 +1591,8 @@
 //#define ULTRA_LCD
 
 //=============================================================================
-//======================== LCD / Controller Selection =========================
-//=====================   (I2C and Shift-Register LCDs)   =====================
+//======================== Выбор LCD / контроллера =======================================================================
+// ===================== (i2c и сдвиг   =====================
 //=============================================================================
 
 //
@@ -1824,10 +1823,10 @@
 // is too low, you should also increment SOFT_PWM_SCALE.
 //#define FAN_SOFT_PWM
 
-// Incrementing this by 1 will double the software PWM frequency,
-// affecting heaters, and the fan if FAN_SOFT_PWM is enabled.
-// However, control resolution will be halved for each increment;
-// at zero value, there are 128 effective control positions.
+// Увеличение этого на 1 удвоит частоту программного шарика,
+// поражает обогреватели и вентилятор, если включен fan_soft_pwm.
+// однако, разрешение управления будет вдвое увеличено для каждого приращения;
+// При нулевом значении есть 128 эффективных контрольных позиций.
 #define SOFT_PWM_SCALE 0
 
 // If SOFT_PWM_SCALE is set to a value higher than 0, dithering can
